@@ -17,12 +17,68 @@ Install the following plugins in Claude Code before using this workspace:
 
 To install: open Claude Code, type the command above, and press Enter.
 
-## Getting Started
+## Getting Started (for viewers / new users)
 
-1. Clone this repo
-2. Open the folder in Claude Code
-3. Install the plugins above
-4. Ask Claude to build a website — it will handle scaffolding, design, and deployment
+You are looking at someone else's repo. Follow these steps to get your own copy that you fully control.
+
+### Step 1 — Fork the repo
+
+Click **Fork** (top-right on GitHub). This creates a copy under your own GitHub account.
+
+### Step 2 — Authenticate with GitHub on your machine
+
+Install the GitHub CLI:
+
+```bash
+brew install gh        # macOS
+# Windows: winget install GitHub.CLI
+```
+
+Log in to **your** GitHub account:
+
+```bash
+gh auth login
+```
+
+Follow the prompts: GitHub.com → HTTPS → authenticate via browser.
+
+### Step 3 — Clone your fork
+
+```bash
+gh repo clone <your-github-username>/Website-Creator
+```
+
+This clones **your fork**, not the original. You own it — you can push freely.
+
+### Step 4 — Open in Claude Code and install plugins
+
+```bash
+cd Website-Creator
+code .        # or open Claude Code and point it at the folder
+```
+
+Then in Claude Code:
+
+```
+/install frontend-design@claude-code-plugins
+/install vercel@claude-plugins-official
+```
+
+### Step 5 — Start building
+
+Ask Claude to build a website. It handles scaffolding, design, and deployment.
+
+---
+
+## Daily workflow (once set up)
+
+```bash
+git add CLAUDE.md README.md    # never add .env files or secrets
+git commit -m "your message"
+git push                       # pushes to your fork, not the original
+```
+
+> `projects/` is gitignored in this workspace — each website you build under `projects/` gets its own separate git repo and Vercel deployment.
 
 ## Structure
 

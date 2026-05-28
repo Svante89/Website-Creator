@@ -78,6 +78,25 @@ Unless the user specifies otherwise:
 
 ---
 
+## GitHub Authentication
+
+Use the GitHub CLI (`gh`) for all GitHub operations:
+
+```bash
+gh auth login          # first-time setup
+gh auth status         # verify you are logged in
+```
+
+Push changes with standard git — `gh auth login` configures credentials automatically:
+
+```bash
+git push origin main
+```
+
+Each website under `projects/` maintains its own separate GitHub remote. When creating a new project, Claude will handle `gh repo create` for that project's repo if the user wants it on GitHub.
+
+---
+
 ## Security — CRITICAL (Public GitHub Repo)
 
 This repository is **publicly visible on GitHub**. The following rules are non-negotiable:
